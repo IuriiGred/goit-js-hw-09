@@ -16,3 +16,33 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+body {
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 156px;
+    justify-content: center;
+}
+
+.gallery-item {
+    list-style: none;
+}
+
+.gallery-image {
+    display: block;
+    object-fit: cover;
+}
+
+.gallery-image:hover {
+    transform: scale(1.04);
+}
+
+div.basicLightbox {
+    background-color: rgba(46, 47, 66, 0.8);
+}

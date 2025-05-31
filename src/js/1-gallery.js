@@ -76,7 +76,7 @@ const galleryMarkup = createGalleryImages(images);
 function createGalleryImages(arr){
   return arr.map(({preview, original, description}) => `
   <li class="gallery-item">
-  <a class="gallery-link href="${original}">
+  <a class="gallery-link" href="${original}">
   <img
     class="gallery-image"
     src="${preview}"

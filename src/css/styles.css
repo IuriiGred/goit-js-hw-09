@@ -20,6 +20,7 @@
 body {
     box-sizing: border-box;
     background-color: #f5f5f5;
+
 }
 
 .gallery {
@@ -43,6 +44,59 @@ body {
     transform: scale(1.04);
 }
 
-div.basicLightbox {
+div.sl-wrapper.simple-lightbox {
     background-color: rgba(46, 47, 66, 0.8);
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    width: 360px;
+    margin: 0 auto;
+    
+}
+
+input {
+    width: 360px;
+    height: 40px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+input:focus,
+input:hover {
+    border-color: #2e2f42;
+}
+
+textarea {
+    width: 360px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+textarea:focus {
+    border-color: #2e2f42;
+}
+
+button {
+    display: block;
+    padding: 8px;
+    border-color: transparent;
+    border-radius: 8px;
+    color: white;
+    background-color: #4e75ff;
+    
+    width: 86px;
+    height: 40px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #6c8cff;
 }

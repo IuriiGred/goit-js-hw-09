@@ -3,30 +3,28 @@ const formData = {
     message: "",
 }
 const lokalKey = "feedback-form-state";
-const obj = {};
 
 const handleFormEl = document.querySelector('.feedback-form');
-const handleInputEl = document.querySelector('input');
-const handleTextareaEl = document.querySelector('textarea');
 
 handleFormEl.addEventListener('input', onInput);
 
+const obj = {};
 function onInput(event) {
-  const name = event.target.name;
-  const value = event.target.value;
+  const {name, value} = event.target;
   obj[name] = value.trim();
   localStorage.setItem(lokalKey, JSON.stringify(obj))
 }
 
 const loadFormValue = () => {
   const replaceValue = localStorage.getItem(lokalKey);
+
   if (replaceValue !== null) {
     const formStorage = JSON.parse(replaceValue);
-    handleInputEl.value = formStorage.email;
-    handleTextareaEl.value = formStorage.message;
+    
+    handleFormEl.elements.email.value = formStorage.email;
+    handleFormEl.elements.message.value = formStorage.message;
   }
 };
-
 
 handleFormEl.addEventListener('submit', onSubmit);
 
@@ -44,18 +42,14 @@ function onSubmit(event){
 
   formData.email = email;
   formData.message = message;
-
   console.log(formData);
-
-  clearFormValue();
-}
-
-const clearFormValue = () => {
+  
+  formData.email = "";
+  formData.message = "";
   localStorage.removeItem(lokalKey);
 
-  handleInputEl.value = '';
-  handleTextareaEl.value = '';
-};
+  handleFormEl.reset()
+}
 
 loadFormValue();
 
